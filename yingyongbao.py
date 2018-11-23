@@ -17,6 +17,9 @@ def load(path):
 
 def yingyongbaodownload(path):
     apkfile_store = []
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6'
+    }
 
     if os.path.exists(path + '/savedata.json'):
         apkfile_store = load(path)
@@ -38,7 +41,10 @@ def yingyongbaodownload(path):
     for i in urlarrary:
 
         print "main url is " + i
-        req = urllib2.Request(i)
+
+        req = urllib2.Request(i,headers=headers)
+
+
         response = urllib2.urlopen(req)
 
         parserjson = json.loads(response.read())
