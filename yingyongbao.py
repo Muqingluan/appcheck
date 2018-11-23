@@ -2,6 +2,7 @@
 import urllib2
 import sys,os
 import json
+import time
 
 
 def store(path,data):
@@ -35,6 +36,7 @@ def yingyongbaodownload(path):
         urlarrary.append(url)
 
     for i in urlarrary:
+
         print "main url is " + i
         req = urllib2.Request(i)
         response = urllib2.urlopen(req)
@@ -43,6 +45,8 @@ def yingyongbaodownload(path):
         if parserjson is None:
             continue
         print parserjson
+
+        time.sleep(1)
 
         count = parserjson[u'count']
         print "this apk count is " + str(count)
@@ -68,3 +72,4 @@ def yingyongbaodownload(path):
 
             apkfile_store.append(apkfile_name)
             store(path,apkfile_store)
+
