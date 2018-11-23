@@ -52,7 +52,7 @@ def yingyongbaodownload(path):
         parserjson = json.loads(response.read())
         if parserjson is None:
             continue
-        #print parserjson
+        print parserjson
 
         time.sleep(1)
 
