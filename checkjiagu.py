@@ -64,13 +64,3 @@ def checkjiagu(apkpath):
             if i.find(i):
                 print "yi jing jia gu!!"
 
-
-if __name__ == "__main__":
-    apk = sys.argv[0]
-    print "checkapk name is " + apk
-    z = zipfile.ZipFile(apk, 'r')
-    for i in z.namelist():
-        for j in jiagu_magic:
-            if i.find(i):
-                print "yi jing jia gu!!"
-
