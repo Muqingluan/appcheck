@@ -62,7 +62,7 @@ def yingyongbaodownload(path):
             downloadurl = parserjson[u'obj'][i][u'apkUrl']
 
             apkfile_name = path + str(downloadurl).split('=')[1].split('&')[0]
-            print apkfile_name
+            print apkfile_name + "kiwisec"
             if apkfile_name in apkfile_store:
                 continue
             apkfile = urllib2.urlopen(downloadurl)
