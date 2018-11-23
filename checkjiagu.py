@@ -57,6 +57,13 @@ jiagu_magic = [
 'libCmbShield.x86.so'
 ]
 
+def checkjiagu(apkpath):
+    z = zipfile.ZipFile(apkpath, 'r')
+    for i in z.namelist():
+        for j in jiagu_magic:
+            if i.find(i):
+                print "yi jing jia gu!!"
+
 
 if __name__ == "__main__":
     apk = sys.argv[0]
